@@ -1,0 +1,35 @@
+Early Childhood Music Class Search
+
+Name possibilities:
+  1. My Little Musician
+
+What do I want a user to be able to do?
+  1. fill out checkbox form with filters
+      a. neighborhoods or geolocation?
+      b. age
+      c. day of the week (morning or afternoon)
+      d. accompanied or drop-off?
+  2. see seleciton of music classes adhering to filters
+  3. click links for music class to be redirected to that school's website
+
+  (4.) Allow user(a school) to request to be included in search
+
+What information do I need to scrape?
+  1. class name
+  2. age range
+  3. day/time
+  4. neighborhood (or should I use geolocation?)
+  5. accompanied or drop-off?
+
+How will I set up scraper?
+  1. set up individual scraper for each school
+  2. will that really save me more time than creating the database myself?
+  3. is this a stupid idea?!
+
+Maybe try by manually building database first?
+
+School
+id     name    location
+
+Classes
+id    name    age range     day     time    school_id
