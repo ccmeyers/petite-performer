@@ -1,11 +1,13 @@
 TODO:
 
+get form working without address and with seeded data
+
 db/migrate: 
   CreateSchools
-  id     name    location
+  id     name    address
 
   CreateClasses
-  id    name    age range     day     time    school_id
+  id    name    age range     day     time    start date    end date       school_id
 
 models:
   School has_many :classes
@@ -22,6 +24,12 @@ views:
     text field for age
     checkboxes for day/time (ex. Monday Morning, Monday Afternoon)
       can you nest and let morning, afternoon pop up if day is checked?
+
+    current location (text_field) distance filter (drop_down)
+    child's age (number_field)
+    day/time (checkboxes)
+    #maybe acommpanied/drop-off? (radio_buttons or drop_down)
+
   show
 
 

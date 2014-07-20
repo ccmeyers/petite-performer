@@ -7,7 +7,7 @@ USE GEOCODER GEM
 
 What do I want a user to be able to do?
   1. fill out checkbox form with filters
-      a. neighborhoods or geolocation?
+      a. neighborhoods or geolocation or geocoder?
       b. age
       c. day of the week (morning or afternoon)
       d. accompanied or drop-off?
@@ -31,7 +31,7 @@ How will I set up scraper?
 Maybe try by manually building database first?
 
 School
-id     name    location
+id     name    address
 
 Classes
-id    name    age range     day     time    school_id
+id    name    age range     day     time    start date    end date    school_id

@@ -1,5 +1,29 @@
 <div class="jumbotron">
-  <h1>Search Early Childhood Music Classes in New York City </h1>
-  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-  <p><a class="btn btn-lg btn-success" href="#" role="button">Make Music!</a></p>
+  <h1>Search Early Childhood Music Classes</h1>
+  <p class="lead">
+    <form action="/show" method="POST">
+      <label>Where are you?</label>
+      <input type="text" name="location">
+
+      <label>How old is your child?</label>
+      <select name="years">
+        <%(0..6).each do |i| %>
+          <option value="<%=i%>"><%=i%></option>
+        <% end %>
+      </select> years
+      <select name="months">
+        <%(0..11).each do |i| %>
+          <option value="<%=i%>"><%=i%></option>
+        <% end %>
+      </select> months
+
+      <label>When are you free?</label>
+      <% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day| %>
+        <%=day%>
+          <input type="checkbox" name="daytimes[]" value="<%=day%> AM">AM
+          <input type="checkbox" name="daytimes[]" value="<%=day%> PM">PM<br>
+      <% end %>
+  </p>
+      <p><input type="submit" class="btn btn-lg btn-success" href="/show" role="button" value="Make Music!"></p>
+    </form>
 </div>

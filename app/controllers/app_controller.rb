@@ -7,6 +7,10 @@ class AppController < Sinatra::Base
   end
 
   post '/show' do
+    raise params.inspect
+    #use params to query database
+    #return lessons where params are true
+      #where(:day => params[:daytimes])
     erb :'show'
   end
 
