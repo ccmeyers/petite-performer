@@ -15,7 +15,7 @@ class AppController < Sinatra::Base
     #use params to query database
     #return lessons where params are true
       #where(:day => params[:daytimes])
-    @lessons = Lesson.where("min_age <= ?", @age)
+    @lessons = Lesson.where("min_age <= ?", @age).where("max_age >= ?", @age)
     erb :'show'
   end
 
