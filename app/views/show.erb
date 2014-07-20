@@ -1,4 +1,11 @@
-<!-- railscast geocoder example
-<%# for location in @location.nearbys(5) %>
-  <li><%#= link_to location.address, location %> (<%#= location.distance.round(2) %> miles)</li>
-<%# end %> -->
+Available Classes:
+<p>
+  <% @lessons.each do |lesson| %>
+    <%= lesson.school.name %>
+    <li><%= lesson.name %></li>
+    <ul>
+      <li><%= lesson.day %></li>
+      <li><%= lesson.time %></li>
+    </ul>
+  <% end %>
+</p>
