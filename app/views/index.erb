@@ -20,9 +20,13 @@
 
       <label>When are you free?</label>
       <% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day| %>
-        <%=day%>
-          <input type="checkbox" name="daytimes[]" value="<%=day%> AM">AM
-          <input type="checkbox" name="daytimes[]" value="<%=day%> PM">PM<br>
+      <table class="fix me later!" align="center">
+        <tr>
+          <td><%=day%></td>
+          <td><input type="checkbox" name="daytimes[]" value="<%=day%> AM">AM</td>
+          <td><input type="checkbox" name="daytimes[]" value="<%=day%> PM">PM</td>
+        </tr>
+      </table>
       <% end %>
   </p>
       <p><input type="submit" class="btn btn-lg btn-success" href="/show" role="button" value="Make Music!"></p>

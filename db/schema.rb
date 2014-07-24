@@ -17,14 +17,15 @@ ActiveRecord::Schema.define(version: 2) do
     t.string  "name"
     t.integer "min_age"
     t.integer "max_age"
-    t.string  "day"
-    t.string  "time"
+    t.string  "daytimes_text"
+    t.string  "daytimes"
     t.integer "school_id"
   end
 
   create_table "schools", force: true do |t|
     t.string "name"
     t.string "address"
+    t.string "website"
     t.float  "latitude"
     t.float  "longitude"
   end

@@ -5,8 +5,8 @@ class CreateLessons < ActiveRecord::Migration
       t.string :name
       t.integer :min_age
       t.integer :max_age
-      t.string :day
-      t.string :time
+      t.string :daytimes_text
+      t.string :daytimes
       t.integer :school_id
     end
   end

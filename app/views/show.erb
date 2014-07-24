@@ -1,11 +1,14 @@
-Available Classes:
-<p>
-  <% @lessons.each do |lesson| %>
-    <%= lesson.school.name %>
-    <li><%= lesson.name %></li>
-    <ul>
-      <li><%= lesson.day %></li>
-      <li><%= lesson.time %></li>
-    </ul>
-  <% end %>
-</p>
+<% if @lessons.present? %>
+  <h3>Available Classes:</h3>
+  <p>
+    <% @lessons.each do |lesson| %>
+      <a target="_blank" href="<%= lesson.school.website %>"><%= lesson.school.name %></a>
+      <li><%= lesson.name %></li>
+      <ul>
+        <li><%= lesson.daytimes_text %></li>
+      </ul>
+    <% end %>
+  </p>
+  <% else %>
+    <h2>There are no classes that fit your criteria. <a href="/">Please try again</a>.</h2>
+<% end %>
