@@ -7,7 +7,7 @@ class Lesson < ActiveRecord::Base
 
   def self.search_daytimes(daytimes_array)
     daytimes_array.collect do |e|
-      where("daytimes like ?", e)
+      where("daytimes like ?", "%#{e}%")
     end
   end
 
