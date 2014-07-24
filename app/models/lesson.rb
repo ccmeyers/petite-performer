@@ -6,13 +6,15 @@ class Lesson < ActiveRecord::Base
   end
 
   def self.search_daytimes(daytimes_array)
-    daytimes_array.collect do |e|
-      where("daytimes like ?", "%#{e}%")
+    a = []
+    daytimes_array.each do |e|
+      a << (where("daytimes like ?", "%#{e}%"))
     end
+    a.uniq.flatten
   end
 
   def self.find_lessons_for(age, location, daytimes_array)
-    search_age(age).search_daytimes(daytimes_array)
+    search_age(age).search_daytimes(daytimes_array).uniq
   end
 
 
