@@ -3,6 +3,7 @@ class Lesson < ActiveRecord::Base
 
   def self.search_age(age)
     where("min_age <= ?", age).where("max_age >= ?", age)
+    #where("min_age <= ? AND max_age >= ?", age, age)
   end
 
   def self.search_daytimes(daytimes_array)

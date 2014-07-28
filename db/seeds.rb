@@ -1,6 +1,6 @@
-bcm = School.create(name: "Brooklyn Conservatory of Music", website: "http://www.bqcm.org/lessons_early-childhood.htm#houseparty")
-greenwich_house = School.create(name: "Greenwich House Music School", website: "http://www.greenwichhouse.org/music_school/chlidrens_programs")
-diller_quaile = School.create(name: "The Diller-Quaile School of Music", website: "http://www.diller-quaile.org/classes-lessons/early-childhood-department/")
+bcm = School.create(name: "Brooklyn Conservatory of Music", address: "58 Seventh Avenue, Brooklyn, New York", website: "http://www.bqcm.org/lessons_early-childhood.htm#houseparty")
+greenwich_house = School.create(name: "Greenwich House Music School", address: "46 Barrow St, New York, NY", website: "http://www.greenwichhouse.org/music_school/chlidrens_programs")
+diller_quaile = School.create(name: "The Diller-Quaile School of Music", address: "24 E 95th St, New York, NY", website: "http://www.diller-quaile.org/classes-lessons/early-childhood-department/")
 
 shining_stars = Lesson.create(
   name: "Shining Stars", 
