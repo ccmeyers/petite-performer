@@ -10,10 +10,11 @@ class AppController < Sinatra::Base
     years = params[:years]
     months = params[:months]
     @age = (years.to_i * 12 + months.to_i).to_s.to_sym
-    @location = params[:location]
+    @location = Geocoder.coordinates(params[:address])
     @daytimes_array = params[:daytimes]
-
-    @lessons = Lesson.find_lessons_for(@age, @location, @daytimes_array)
+    @lessons = Lesson.find_lessons_for(@age, @daytimes_array)
+    @schools = School.near(@location)
+# binding.pry
     erb :'show'
   end
 
