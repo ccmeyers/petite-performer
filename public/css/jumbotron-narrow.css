@@ -1,7 +1,25 @@
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
 /* Space out content a bit */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #FFFFF0;
+}
+.container {
+  position: relative;
+}
+#lesson_form {
+  font-family: "Varela Round";
+}
+img {
+  float: right;
+  padding-bottom: 2px;
+}
+.lesson_result {
+  float: left;
+  min-height: 202px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -22,6 +40,12 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
+  font-family: "Shadows Into Light";
+  font-size: 30px;
+}
+
+.content {
+  padding-bottom: 50px;
 }
 
 /* Custom page footer */
@@ -29,6 +53,7 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  bottom: 0;
 }
 
 /* Customize container */
@@ -42,6 +67,9 @@ body {
 }
 
 /* Main marketing message and sign up button */
+.jumbotron h1 {
+  font-family: "Gloria Hallelujah";
+}
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;

@@ -3,12 +3,16 @@
     <h3>Available Classes:</h3>
     <p>
       <% @lessons.each do |lesson| %>
-        <a target="_blank" href="<%= lesson.school.website %>"><%= lesson.school.name %></a> ( <%= (lesson.school.distance_from(@location)).round(2) %> miles )</li>
-        <img src="http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=<%=lesson.school.latitude%>%2C<%=lesson.school.longitude%>">
-        <li><%= lesson.name %></li>
-        <ul>
-          <li><%= lesson.daytimes_text.gsub("m, ", "m</li><li>") %></li>
-        </ul>
+        <div class="lesson_result">
+          <a target="_blank" href="<%= lesson.school.website %>"><%= lesson.school.name %></a> ( <%= (lesson.school.distance_from(@location)).round(2) %> miles )</li>
+          <li><%= lesson.name %></li>
+          <ul>
+            <li><%= lesson.daytimes_text.gsub("m, ", "m</li><li>") %></li>
+          </ul>
+        </div>
+        <div class="school_img">
+          <img src="http://maps.google.com/maps/api/staticmap?size=350x200&sensor=false&zoom=16&markers=<%=lesson.school.latitude%>%2C<%=lesson.school.longitude%>">
+        </div>
       <% end %>
     </p>
     <% else %>
