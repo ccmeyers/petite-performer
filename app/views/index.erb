@@ -4,7 +4,7 @@
     <form id="lesson_form" action="/show" method="POST">
     
       <label>Where are you?</label>
-      <input type="text" name="address" autocomplete="on" placeholder="address">
+      <input id="address_box" type="text" name="address" autocomplete="on" placeholder=" address or zip code">
 
       <label>How old is your child?</label>
       <select name="years">
@@ -20,11 +20,11 @@
 
       <label>When are you free?</label>
       <% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day| %>
-      <table class="fix me later!" align="center">
+      <table class="dayboxes">
         <tr>
-          <td><%=day%></td>
-          <td><input type="checkbox" name="daytimes[]" value="<%=day%> AM">AM</td>
-          <td><input type="checkbox" name="daytimes[]" value="<%=day%> PM">PM</td>
+          <td id="day"><%=day%></td>
+          <td id="time"><input type="checkbox" name="daytimes[]" value="<%=day%> AM">AM</td>
+          <td id="time"><input type="checkbox" name="daytimes[]" value="<%=day%> PM">PM</td>
         </tr>
       </table>
       <% end %>
