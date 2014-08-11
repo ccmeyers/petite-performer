@@ -5,7 +5,14 @@ Bundler.require
 
 #require 'nokogiri'
 #require 'open-uri'
-configure :production, :development do
+configure :development do
+  ActiveRecord::Base.establish_connection(
+    :adapter => "sqlite3",
+    :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
+  )
+end
+
+configure :production do
   db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 
   ActiveRecord::Base.establish_connection(
@@ -18,10 +25,6 @@ configure :production, :development do
   )
 end
 # ActiveRecord::Base.establish_connection('postgres://localhost/my-little-musician')
-# ActiveRecord::Base.establish_connection(
-#   :adapter => "sqlite3",
-#   :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
-# )
 
 Dir[File.join(File.dirname(__FILE__), "../app/controllers", "*.rb")].each {|f| require f}
 Dir[File.join(File.dirname(__FILE__), "../app/models", "*.rb")].each {|f| require f}

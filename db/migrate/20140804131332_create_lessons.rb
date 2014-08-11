@@ -1,6 +1,5 @@
 class CreateLessons < ActiveRecord::Migration
-
-  def change 
+  def change
     create_table :lessons do |t|
       t.string :name
       t.integer :min_age
@@ -10,5 +9,4 @@ class CreateLessons < ActiveRecord::Migration
       t.integer :school_id
     end
   end
-
 end
