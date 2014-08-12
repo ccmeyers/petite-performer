@@ -7,7 +7,7 @@
       <%= "(  #{(school.distance_from(@location)).round(2)}  miles )" if @location %></li>
         <% if @location %>
           <div class="school_img">
-            <img src="http://maps.google.com/maps/api/staticmap?size=350x200&sensor=false&zoom=16&markers=<%=school.latitude%>%2C<%=school.longitude%>">
+            <a href="http://maps.google.com/?q=<%= school.address %>" target="blank"><img src="http://maps.google.com/maps/api/staticmap?size=350x200&sensor=false&zoom=16&markers=<%=school.latitude%>%2C<%=school.longitude%>"></a>
           </div>
         <% end %>
         <% lessons.each do |lesson| %>
