@@ -18,12 +18,16 @@ body {
 img {
   float: right;
   padding-bottom: 2px;
+  padding-left: 80px;
 }
 .lesson_result {
   float: left;
   min-height: 202px;
+  padding-bottom: 60px;
 }
-
+.school_img {
+  float: right;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -127,7 +131,4 @@ label {
 }
 input {
   text-align: center;
-}
-.school_img {
-  float: right;
 }
