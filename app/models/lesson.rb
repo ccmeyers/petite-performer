@@ -2,12 +2,20 @@ class Lesson < ActiveRecord::Base
   belongs_to :school
 
   def self.search_age(age)
-    where("min_age <= ?", age).where("max_age >= ?", age)
+    if age.to_s.to_i > 0
+      where("min_age <= ?", age).where("max_age >= ?", age)
+    else
+      self.all
+    end
     #where("min_age <= ? AND max_age >= ?", age, age)
   end
 
   def self.search_daytimes(daytimes_array)
-    a = daytimes_array.collect {|e|where("daytimes like ?", "%#{e}%")}.uniq.flatten
+    if !daytimes_array.nil?
+      a = daytimes_array.collect {|e|where("daytimes like ?", "%#{e}%")}.uniq.flatten
+    else
+      self.all
+    end
   end
 
   def self.find_lessons_for(age, daytimes_array)

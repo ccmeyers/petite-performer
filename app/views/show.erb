@@ -4,18 +4,21 @@
     <p>
       <% @lessons.each do |lesson| %>
         <div class="lesson_result">
-          <a target="_blank" href="<%= lesson.school.website %>"><%= lesson.school.name %></a> ( <%= (lesson.school.distance_from(@location)).round(2) %> miles )</li>
+          <a target="_blank" href="<%= lesson.school.website %>"><%= lesson.school.name %></a> 
+          <%= "(  #{(lesson.school.distance_from(@location)).round(2)}  miles )" if @location %></li>
           <li><%= lesson.name %></li>
           <ul>
             <li><%= lesson.daytimes_text.gsub("m, ", "m</li><li>") %></li>
           </ul>
         </div>
-        <div class="school_img">
-          <img src="http://maps.google.com/maps/api/staticmap?size=350x200&sensor=false&zoom=16&markers=<%=lesson.school.latitude%>%2C<%=lesson.school.longitude%>">
-        </div>
+        <% if @location %>
+          <div class="school_img">
+            <img src="http://maps.google.com/maps/api/staticmap?size=350x200&sensor=false&zoom=16&markers=<%=lesson.school.latitude%>%2C<%=lesson.school.longitude%>">
+          </div>
+        <% end %>
       <% end %>
     </p>
     <% else %>
-      <h2>There are no classes that fit your criteria. <a href="/">Please try again</a>.</h2>
+      <h2>There are no classes that fit your criteria. <br><a href="/">Please try again</a>.</h2>
   <% end %>
 <% end %>
