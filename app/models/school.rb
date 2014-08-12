@@ -2,13 +2,22 @@ class School < ActiveRecord::Base
   extend Geocoder::Model::ActiveRecord
   
   has_many :lessons
-
-  # attr_accessor :name, :address, :latitude, :longitude
   
   geocoded_by :address
   after_validation :geocode
-  # reverse_geocoded_by :latitude, :longitude
-  # def self.search_location(location)
-  #   near(location, 5)
-  # end
+
+  def self.filtered_lessons(lessons)
+    filtered_hash = {}
+    filtered_schools = lessons.collect do |lesson|
+      lesson.school
+    end
+    filtered_schools.each do |school|
+      filtered_hash[school] = []
+    end
+    lessons.each do |lesson|
+      filtered_hash[lesson.school] << lesson
+    end
+    filtered_hash
+  end
+
 end

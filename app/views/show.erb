@@ -1,24 +1,28 @@
-<% if @lessons.present? %>
-  <% if @schools.present? %>
-    <h3>Available Classes:</h3>
-    <p>
-      <% @lessons.each do |lesson| %>
-        <div class="lesson_result">
-          <a target="_blank" href="<%= lesson.school.website %>"><%= lesson.school.name %></a> 
-          <%= "(  #{(lesson.school.distance_from(@location)).round(2)}  miles )" if @location %></li>
-          <li><%= lesson.name %></li>
-          <ul>
-            <li><%= lesson.daytimes_text.gsub("m, ", "m</li><li>") %></li>
-          </ul>
-        </div>
+<% if @schools.present? && @lessons.present? %>
+  <h3>Available Classes:</h3>
+  <p>
+  <div class="lesson_result">
+    <% School.filtered_lessons(@lessons).each do |school, lessons| %>
+      <a target="_blank" href="<%= school.website %>"><%= school.name %></a> 
+      <%= "(  #{(school.distance_from(@location)).round(2)}  miles )" if @location %></li>
         <% if @location %>
           <div class="school_img">
-            <img src="http://maps.google.com/maps/api/staticmap?size=350x200&sensor=false&zoom=16&markers=<%=lesson.school.latitude%>%2C<%=lesson.school.longitude%>">
+            <img src="http://maps.google.com/maps/api/staticmap?size=350x200&sensor=false&zoom=16&markers=<%=school.latitude%>%2C<%=school.longitude%>">
           </div>
         <% end %>
-      <% end %>
-    </p>
-    <% else %>
-      <h2>There are no classes that fit your criteria. <br><a href="/">Please try again</a>.</h2>
-  <% end %>
+        <% lessons.each do |lesson| %>
+          <% if @lessons.include?(lesson) %>
+            <ul>
+              <li><%= lesson.name %></li>
+              <ul>
+                <li><%= lesson.daytimes_text.gsub("m, ", "m</li><li>") %></li>
+              </ul>
+            </ul>
+          <% end %>
+        <% end %>
+    <% end %>
+  </div>
+  </p>
+<% else %>
+  <h2>There are no classes that fit your criteria. <br><a href="/">Please try again</a>.</h2>
 <% end %>

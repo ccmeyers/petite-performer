@@ -17,7 +17,7 @@ class AppController < Sinatra::Base
       @schools = School.all
     end
     @daytimes_array = params[:daytimes]
-    @lessons = Lesson.find_lessons_for(@age, @daytimes_array)
+    @lessons = Lesson.find_lessons_for(@age, @daytimes_array).uniq
     erb :'show'
   end
 
