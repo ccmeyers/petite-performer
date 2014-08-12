@@ -2,7 +2,7 @@
   <h3>Available Classes:</h3>
   <p>
   <div class="lesson_result">
-    <% School.filtered_lessons(@lessons).each do |school, lessons| %>
+    <% @sorted_hash.each do |school, lessons| %>
       <a target="_blank" href="<%= school.website %>"><%= school.name %></a> 
       <%= "(  #{(school.distance_from(@location)).round(2)}  miles )" if @location %></li>
         <% if @location %>
