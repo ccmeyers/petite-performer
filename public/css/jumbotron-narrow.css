@@ -128,3 +128,6 @@ label {
 input {
   text-align: center;
 }
+input[type="checkbox"] {
+  margin: 0px;
+}
