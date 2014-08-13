@@ -8,21 +8,21 @@ shining_stars = Lesson.create(
   name: "Shining Stars", 
   min_age: 12, 
   max_age: 23, 
-  daytimes_text: "Mon, Tue, Wed, or Sat: 9:30am - 10:15am", 
+  daytimes_text: "Mon: 9:30am - 10:15am, Tue: 9:30am - 10:15am, Wed: 9:30am - 10:15am, Sat: 9:30am - 10:15am", 
   daytimes: "Monday AM, Tuesday AM, Wednesday AM, Saturday AM", 
   school_id: 1)
 the_jump_ups = Lesson.create(
   name: "The Jump Ups", 
   min_age: 24, 
   max_age: 35, 
-  daytimes_text: "Mon, Tue, Wed, or Sat: 10:30am - 11:15am", 
+  daytimes_text: "Mon: 10:30am - 11:15am, Tue: 10:30am - 11:15am, Wed: 10:30am - 11:15am, Sat: 10:30am - 11:15am", 
   daytimes: "Monday AM, Tuesday AM, Wednesday AM, Saturday AM", 
   school_id: 1)
 the_night_owls = Lesson.create(
   name: "The Night Owls", 
   min_age: 36, 
   max_age: 48, 
-  daytimes_text: "Mon or Tue: 3:30pm - 4:15pm", 
+  daytimes_text: "Mon: 3:30pm - 4:15pm, Tue: 3:30pm - 4:15pm", 
   daytimes: "Monday PM, Tuesday PM", 
   school_id: 1)
 
