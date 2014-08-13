@@ -9,6 +9,7 @@ A searchable database for early childhood music classes in NYC
 * queries the database based on location, age, and availablilty  
 * returns results with or without params  
 * sorts results by location (nearest to user's location)  
+* provides google map image of school's location that links to google maps
 
 ## Future
 
