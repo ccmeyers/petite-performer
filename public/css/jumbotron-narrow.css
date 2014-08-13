@@ -132,3 +132,6 @@ label {
 input {
   text-align: center;
 }
+.row {
+  margin-left: 0px;
+}

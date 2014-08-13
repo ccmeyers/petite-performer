@@ -3,6 +3,7 @@
   <p>
   <div class="lesson_result">
     <% @sorted_hash.each do |school, lessons| %>
+    <div class="row">
       <a target="_blank" href="<%= school.website %>"><%= school.name %></a> 
       <%= "(  #{(school.distance_from(@location)).round(2)}  miles )" if @location %></li>
         <% if @location %>
@@ -20,6 +21,7 @@
             </ul>
           <% end %>
         <% end %>
+        </div>
     <% end %>
   </div>
   </p>

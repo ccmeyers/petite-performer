@@ -11,16 +11,16 @@ class AppController < Sinatra::Base
     years = params[:years]
     months = params[:months]
     @age = (years.to_i * 12 + months.to_i).to_s.to_sym
-    if params[:address].present?
-      @location = Geocoder.coordinates(params[:address])
-      @schools = School.near(@location, 50, :order => "distance")
-    else
-      @schools = School.all
-    end
-    @daytimes_array = params[:daytimes]
+    @location = Geocoder.coordinates(params[:address])
+    @schools = School.all
     @lessons = Lesson.find_lessons_for(@age, @daytimes_array).uniq
     @hash = School.filtered_lessons(@lessons)
-    @sorted_hash = @hash.sort_by{|k,v| k.distance_from(@location)}
+    if params[:address].present?
+      @sorted_hash = @hash.sort_by{|k,v| k.distance_from(@location)}
+    else
+      @sorted_hash = @hash
+    end
+    @daytimes_array = params[:daytimes]
     # binding.pry
     erb :'show'
   end
