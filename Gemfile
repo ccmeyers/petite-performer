@@ -11,7 +11,7 @@ gem 'rack-test'
 gem 'geocoder'
 gem 'shotgun'
 gem 'thin'
-gem 'bcrypt-ruby'
+# gem 'bcrypt-ruby'
 
 
 group :development do
