@@ -11,6 +11,8 @@ gem 'rack-test'
 gem 'geocoder'
 gem 'shotgun'
 gem 'thin'
+gem 'bcrypt-ruby'
+
 
 group :development do
   gem 'sqlite3'
